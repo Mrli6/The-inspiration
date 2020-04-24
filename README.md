@@ -1,21 +1,3 @@
-# 判断任意大小的矩阵是否为单位矩阵
-
-```
-int identity_matrix(int* arr,int num)
-{
-	for (int rows = 0; rows < num; rows++) {
-		for (int cols = 0; cols <num; cols++) {
-			if (*arr++ != (rows==cols)) {
-				return 0;
-			}
-		}
-	}
-
-	return 1;
-}
-```
-* 将二位数组“压扁”为一个指向整型的指针使函数可以接受任意大小的二维数组;`声明为int\*\*arr来接受二维数组是错误的`。用\*arr++ != (rows==cols)判断二维数组中的每个数。
-
 # 《C和指针》第八章编程练习第二题：计算税额
 
 ```
@@ -36,6 +18,24 @@ float single_tax(float income)
 }
 ```
 * 将收入，税率等数据都放入数组（或结构）中，免去了if语句。
+
+# 判断任意大小的矩阵是否为单位矩阵
+
+```
+int identity_matrix(int* arr,int num)
+{
+	for (int rows = 0; rows < num; rows++) {
+		for (int cols = 0; cols <num; cols++) {
+			if (*arr++ != (rows==cols)) {
+				return 0;
+			}
+		}
+	}
+
+	return 1;
+}
+```
+* 将二位数组“压扁”为一个指向整型的指针使函数可以接受任意大小的二维数组;`声明为int\*\*arr来接受二维数组是错误的`。用\*arr++ != (rows==cols)判断二维数组中的每个数。
 
 
 
